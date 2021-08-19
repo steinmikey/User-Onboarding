@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import styled from "styled-components";
+import "./styles.less";
 import Form from "./Form";
 import User from "./User";
 
@@ -7,6 +8,23 @@ import schema from "./validation/formSchema";
 import axios from "axios";
 import * as yup from "yup";
 
+//styles
+const StyledFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const StyledUserContainer = styled.div`
+  background-color: lightgray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 15px;
+`;
+
+//initializing
 const initialFormValues = {
   first_name: "",
   last_name: "",
@@ -87,16 +105,13 @@ export default function App() {
   }, [formValues]);
 
   return (
-    <div className="Container">
-      <div className="Form">
-        <header>User-Onboarding</header>
-        <Form values={formValues} change={inputChange} submit={formSubmit} disabled={disabled} errors={formErrors} />
-      </div>
-      <div className="Users">
+    <StyledFormContainer>
+      <Form values={formValues} change={inputChange} submit={formSubmit} disabled={disabled} errors={formErrors} />
+      <StyledUserContainer>
         {users.map((user, index) => {
           return <User key={index} details={user} />;
         })}
-      </div>
-    </div>
+      </StyledUserContainer>
+    </StyledFormContainer>
   );
 }
