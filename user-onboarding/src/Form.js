@@ -75,7 +75,9 @@ export default function Form(props) {
             <input type="checkbox" name="terms" checked={values.terms} onChange={onChange} />
           </label>
         </div>
-        <button disabled={disabled}>Submit</button>
+        <button name="submit" disabled={disabled}>
+          Submit
+        </button>
         <div className="errors">
           {/* validation errors*/}
           <div>{errors.first_name}</div>
