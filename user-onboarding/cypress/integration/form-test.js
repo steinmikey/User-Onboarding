@@ -42,11 +42,10 @@ describe("User On-boarding App", () => {
 
   describe("Terms of service select, deslect", () => {
     it("Agree to terms, check for checked", () => {
-      selectAgree().click().should("have.value", "on");
+      selectAgree().check().should("be.checked");
     });
     it("unagree to terms, check for unchecked", () => {
-      //   selectAgree().check();
-      selectAgree().should("have.value", "off");
+      selectAgree().check().should("be.checked").uncheck().should("not.be.checked");
     });
   });
 });
