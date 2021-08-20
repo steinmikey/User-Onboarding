@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledForm = styled.div`
-  border: solid red 2px;
+  border: solid black 5px;
+
   margin: 20px;
   padding: 20px;
   align-self: flex-start;

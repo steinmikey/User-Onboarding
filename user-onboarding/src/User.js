@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledUser = styled.div`
-  border: solid red 2px;
+  border: solid darkgray 4px;
   padding: 5px 5px 10px;
   margin: 10px;
   width: 22%;
